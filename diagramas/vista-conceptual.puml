@@ -1,0 +1,37 @@
+@startuml vista-conceptual
+left to right direction
+skinparam classAttributeIconSize 0
+
+package "Dominio Clínico" {
+  class Paciente
+  class HistoriaClinica
+  class EventoClinico
+  class Cita
+  class Teleconsulta
+}
+
+package "Dominio Operativo" {
+  class Sede
+  class Medico
+  class Laboratorio
+  class OrdenLaboratorio
+  class ResultadoLaboratorio
+}
+
+package "Dominio de Seguridad" {
+  class Usuario
+  class Rol
+  class RegistroAuditoria
+}
+
+Paciente --> HistoriaClinica
+HistoriaClinica --> EventoClinico
+Paciente --> Cita
+Cita --> Teleconsulta
+Medico --> Cita
+HistoriaClinica --> OrdenLaboratorio
+OrdenLaboratorio --> ResultadoLaboratorio
+Laboratorio --> ResultadoLaboratorio
+Usuario --> Rol
+Usuario --> RegistroAuditoria
+@enduml

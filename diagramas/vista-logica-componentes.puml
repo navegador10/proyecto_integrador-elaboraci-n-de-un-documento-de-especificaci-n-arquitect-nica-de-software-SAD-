@@ -1,0 +1,58 @@
+@startuml vista-logica-componentes
+left to right direction
+skinparam componentStyle rectangle
+
+actor Paciente
+actor Medico
+actor "Personal Administrativo" as Admin
+actor "Laboratorio Externo" as Lab
+actor "TI/Seguridad" as TI
+
+package "Frontend" {
+  component "Portal Paciente" as Portal
+  component "Aplicación Médica" as MedApp
+  component "Portal Administrativo" as AdminApp
+}
+
+package "API y Orquestación" {
+  component "API Gateway" as Gateway
+}
+
+package "Servicios de Negocio" {
+  component "Servicio Pacientes" as Pacientes
+  component "Servicio Historia Clínica" as Historia
+  component "Servicio Agendamiento" as Agenda
+  component "Servicio Telemedicina" as Telemed
+  component "Servicio Seguridad" as Seguridad
+  component "Adaptador Laboratorio" as LabAdapter
+}
+
+database "BD Pacientes" as DBPacientes
+database "BD Historias" as DBHistorias
+database "BD Citas" as DBCitas
+database "BD Auditoría" as DBAuditoria
+
+Paciente --> Portal
+Medico --> MedApp
+Admin --> AdminApp
+Lab --> LabAdapter
+TI --> Seguridad
+
+Portal --> Gateway
+MedApp --> Gateway
+AdminApp --> Gateway
+Gateway --> Pacientes
+Gateway --> Historia
+Gateway --> Agenda
+Gateway --> Telemed
+Gateway --> Seguridad
+Gateway --> LabAdapter
+
+Pacientes --> DBPacientes
+Historia --> DBHistorias
+Agenda --> DBCitas
+Seguridad --> DBAuditoria
+
+LabAdapter --> "LIS Externo" : HL7/FHIR
+Telemed --> "Plataforma de Videoconferencia" : API
+@enduml
