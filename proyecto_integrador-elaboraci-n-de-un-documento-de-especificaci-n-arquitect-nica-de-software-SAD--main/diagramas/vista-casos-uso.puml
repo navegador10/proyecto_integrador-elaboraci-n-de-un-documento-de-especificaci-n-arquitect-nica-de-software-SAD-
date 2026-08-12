@@ -1,0 +1,27 @@
+@startuml vista-casos-uso
+left to right direction
+skinparam usecaseStyle rectangle
+
+actor Paciente
+actor Medico
+actor "Personal Administrativo" as Admin
+actor "Laboratorio Externo" as Lab
+actor "Seguridad" as Security
+
+rectangle "Casos de uso arquitectónicamente significativos" {
+  usecase "Consultar historia clínica" as UC1
+  usecase "Agendar teleconsulta" as UC2
+  usecase "Recibir resultado de laboratorio" as UC3
+  usecase "Autenticarse con MFA" as UC4
+  usecase "Auditar accesos" as UC5
+}
+
+Paciente --> UC1
+Paciente --> UC2
+Medico --> UC1
+Medico --> UC2
+Admin --> UC2
+Lab --> UC3
+Security --> UC4
+Security --> UC5
+@enduml

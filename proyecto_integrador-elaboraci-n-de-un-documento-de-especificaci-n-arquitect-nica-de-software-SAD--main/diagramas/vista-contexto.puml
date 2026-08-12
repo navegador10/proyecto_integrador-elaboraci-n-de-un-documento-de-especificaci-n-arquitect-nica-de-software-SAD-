@@ -1,0 +1,34 @@
+@startuml vista-contexto
+left to right direction
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #4a4a4a
+skinparam activityDiamondFontSize 12
+skinparam ranksep 60
+skinparam nodesep 40
+
+actor "Paciente" as Paciente
+actor "Médico" as Medico
+actor "Personal Administrativo" as Admin
+actor "Laboratorio Externo" as Lab
+actor "Administrador TI/Seguridad" as TI
+
+rectangle "Sistema Hospitalario Digital" as Sistema {
+  component "Portal Paciente" as PortalPaciente
+  component "Aplicación Clínica" as AppClinica
+  component "Portal Administrativo" as PortalAdmin
+  component "API Gateway" as ApiGateway
+  component "Servicio de Seguridad" as ServicioSeguridad
+}
+
+Paciente --> PortalPaciente
+Medico --> AppClinica
+Admin --> PortalAdmin
+Lab --> ApiGateway
+TI --> ServicioSeguridad
+PortalPaciente --> ApiGateway
+AppClinica --> ApiGateway
+PortalAdmin --> ApiGateway
+ApiGateway --> ServicioSeguridad
+@enduml

@@ -1,0 +1,47 @@
+@startuml vista-implementacion-componentes
+left to right direction
+skinparam componentStyle rectangle
+
+package "Servicios de Negocio" {
+  component "pacientes-service" as PacientesSvc
+  component "historia-clinica-service" as HistoriaSvc
+  component "agendamiento-service" as AgendaSvc
+  component "telemedicina-service" as TelemedSvc
+  component "seguridad-service" as SeguridadSvc
+  component "laboratorio-adapter" as LabAdapterSvc
+  component "api-gateway" as GatewaySvc
+}
+
+package "Infraestructura de Soporte" {
+  component "Service Registry" as Registry
+  component "Message Broker" as Broker
+  component "Monitoring" as Monitor
+}
+
+GatewaySvc --> PacientesSvc
+GatewaySvc --> HistoriaSvc
+GatewaySvc --> AgendaSvc
+GatewaySvc --> TelemedSvc
+GatewaySvc --> SeguridadSvc
+GatewaySvc --> LabAdapterSvc
+
+HistoriaSvc --> Broker
+AgendaSvc --> Broker
+TelemedSvc --> Broker
+SeguridadSvc --> Broker
+
+PacientesSvc --> Registry
+HistoriaSvc --> Registry
+AgendaSvc --> Registry
+TelemedSvc --> Registry
+SeguridadSvc --> Registry
+LabAdapterSvc --> Registry
+
+Monitor --> GatewaySvc
+Monitor --> PacientesSvc
+Monitor --> HistoriaSvc
+Monitor --> AgendaSvc
+Monitor --> TelemedSvc
+Monitor --> SeguridadSvc
+Monitor --> LabAdapterSvc
+@enduml
