@@ -6,13 +6,17 @@ Repositorio del proyecto de **Arquitectura del Software**, elaborado siguiendo l
 
 ## Tabla de contenido
 
-- [Descripción del proyecto](#descripción-del-proyecto)
-- [Estructura del repositorio](#estructura-del-repositorio)
-- [Contenido del SAD](#contenido-del-sad)
-- [Diagramas](#diagramas)
-- [Cómo navegar este repositorio](#cómo-navegar-este-repositorio)
-- [Equipo de trabajo](#equipo-de-trabajo)
-- [Metodología y referencias](#metodología-y-referencias)
+- [Sistema Hospitalario Digital — Documento de Especificación Arquitectónica de Software (SAD)](#sistema-hospitalario-digital--documento-de-especificación-arquitectónica-de-software-sad)
+  - [Tabla de contenido](#tabla-de-contenido)
+  - [Descripción del proyecto](#descripción-del-proyecto)
+  - [Estructura del repositorio](#estructura-del-repositorio)
+  - [Contenido del SAD](#contenido-del-sad)
+  - [Diagramas](#diagramas)
+  - [Cumplimiento de requisitos](#cumplimiento-de-requisitos)
+  - [Cómo navegar este repositorio](#cómo-navegar-este-repositorio)
+  - [Equipo de trabajo](#equipo-de-trabajo)
+  - [Fase 4 — Consolidación de la especificación arquitectónica](#fase-4--consolidación-de-la-especificación-arquitectónica)
+  - [Metodología y referencias](#metodología-y-referencias)
 
 ## Descripción del proyecto
 
@@ -27,11 +31,15 @@ sistema-hospitalario-sad/
 ├── README.md
 ├── SAD_Sistema_Hospitalario.docx        # Documento consolidado completo
 ├── docs/
-│   ├── 01-documento-vision.md
-│   ├── 02-especificacion-requisitos.md
-│   ├── 03-modelo-conceptual-dominio.md
-│   ├── 04-decisiones-arquitectonicas.md
-│   └── 05-vistas-arquitectonicas.md
+│   ├── 01-portada
+|   ├── 02-introduccion
+|   ├── 03-documento-vision.md
+|   ├── 04-especificacion-requisitos.md
+|   ├── 05-modelo-conceptual-dominio.md
+│   ├── 06-decisiones-arquitectonicas.md
+│   ├── 07-vistas-arquitectonicas.md
+│   ├── 08-conclusiones
+│   └── 09-referencias-bibliograficas
 ├── diagramas/
 │   ├── modelo-conceptual-dominio.png      # Diagrama de clases UML
 │   ├── vista-logica-componentes.svg       # Diagrama de componentes UML (SVG)
@@ -39,6 +47,7 @@ sistema-hospitalario-sad/
 │   ├── vista-implementacion-componentes.svg # Diagrama de implementación UML (SVG)
 │   ├── vista-implementacion-componentes.puml # Fuente PlantUML
 │   └── vista-fisica-despliegue.png
+│── imagenes-diagramas
 └── LICENSE
 ```
 
