@@ -1,4 +1,4 @@
-@startuml
+@startuml sequence-hl7-integration
 title Secuencia: Integración de resultados HL7/FHIR desde laboratorio externo
 actor Laboratorio
 participant "Adaptador HL7/FHIR" as Adapter

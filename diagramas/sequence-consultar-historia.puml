@@ -1,4 +1,4 @@
-@startuml
+@startuml sequence-consultar-historia
 title Secuencia: Consultar historia clínica desde otra sede
 actor Medico
 participant "Portal Sede A" as PortalA

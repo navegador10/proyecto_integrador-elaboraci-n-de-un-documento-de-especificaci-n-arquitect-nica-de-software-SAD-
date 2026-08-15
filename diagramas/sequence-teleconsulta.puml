@@ -1,4 +1,4 @@
-@startuml
+@startuml sequence-teleconsulta
 title Secuencia: Reserva y realización de teleconsulta
 actor Paciente
 actor Medico
