@@ -20,4 +20,5 @@ Tele -> Sec: Verificar sesión y acceso
 Tele -> Medico: Conecta audiovisual
 Tele -> Hist: Registrar evento de teleconsulta
 
+/' Touch: trigger workflow '/
 @enduml
