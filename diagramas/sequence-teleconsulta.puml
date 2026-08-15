@@ -1,0 +1,24 @@
+@startuml sequence-teleconsulta
+title Secuencia: Reserva y realización de teleconsulta
+actor Paciente
+actor Medico
+participant "Portal Paciente" as PortalP
+participant "API Gateway" as Gateway
+participant "Agendamiento Service" as Agenda
+participant "Telemedicina Service" as Tele
+
+Paciente -> PortalP: Solicita agendar teleconsulta
+PortalP -> Gateway: POST /citas (tipo=teleconsulta)
+Gateway -> Agenda: Crear cita y generar enlace temporal
+Agenda --> Gateway: Cita creada + enlace
+Gateway -> PortalP: Confirma cita y enlace
+
+-- día y hora de la cita --
+Medico -> Tele: Inicia sesión
+Paciente -> Tele: Accede con enlace
+Tele -> Sec: Verificar sesión y acceso
+Tele -> Medico: Conecta audiovisual
+Tele -> Hist: Registrar evento de teleconsulta
+
+/' Touch: trigger workflow '/
+@enduml
