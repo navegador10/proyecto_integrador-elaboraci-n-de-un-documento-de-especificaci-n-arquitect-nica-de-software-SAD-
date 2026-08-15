@@ -1,0 +1,17 @@
+@startuml
+title Secuencia: Integración de resultados HL7/FHIR desde laboratorio externo
+actor Laboratorio
+participant "Adaptador HL7/FHIR" as Adapter
+participant "API Gateway" as Gateway
+participant "Orden/Resultado Service" as Orden
+participant "Historial Service" as Hist
+
+Laboratorio -> Adapter: Envia resultado (FHIR Bundle)
+Adapter -> Gateway: POST /lab/results (transform FHIR->internal)
+Gateway -> Orden: Registrar resultado y vincular orden
+Orden -> Hist: Añadir resultado a historia clínica
+Hist --> Orden: Confirmación
+Orden --> Gateway: OK
+Gateway --> Adapter: 200 OK
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+title Secuencia: Consultar historia clínica desde otra sede
+actor Medico
+participant "Portal Sede A" as PortalA
+participant "API Gateway" as Gateway
+participant "Historial Service" as Hist
+participant "Seguridad Service" as Sec
+
+Medico -> PortalA: Solicita historial (idPaciente)
+PortalA -> Gateway: GET /pacientes/{id}/historia
+Gateway -> Sec: Verificar token y permisos (RBAC)
+Sec --> Gateway: Permiso OK
+Gateway -> Hist: Consulta historia por idPaciente
+Hist --> Gateway: Respuesta historia (JSON)
+Gateway --> PortalA: Entrega historia
+PortalA --> Medico: Muestra información (auditar evento)
+
+@enduml
