@@ -91,10 +91,9 @@ Los diagramas están elaborados con notación UML y se acompañan de sus fuentes
 
 | Nombre | Rol en el proyecto |
 |---|---|
-| [Nombre integrante 1] | [Rol / módulo a cargo] |
-| [Nombre integrante 2] | [Rol / módulo a cargo] |
-| [Nombre integrante 3] | [Rol / módulo a cargo] |
-| [Nombre integrante 4] | [Rol / módulo a cargo] |
+| **ADELSON AGUIRRE RODRIGUEZ** | Integrante |
+| **SERGIO ALONSO ARBOLEDA SÁNCHEZ** | Integrante |
+
 
 ## Fase 4 — Consolidación de la especificación arquitectónica
 
